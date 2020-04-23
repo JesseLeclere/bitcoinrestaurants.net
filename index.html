@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class='restaurant'>
+        <div class="container">
+            <div class="row" id="res_container">
+            </div>
+        </div>
+    </div>
+
+<script>
+    var data= [
+    {img: './images/downtown_johnny_Brown_s.jpeg', name: "Downtown Johnny Brown's", address: '1220 3rd Ave ', code: 'San Diego, CA 92101'},
+    {img: './images/top_of_the_hill_grille.jpg', name: "Top of the Hill Grille", address: '8 Sunny Hill Rd', code: 'Casco, ME 04015'},
+    {img: './images/piccola_venezia_restaurant_inc.jpg', name: "Piccola Venezia Restaurant Inc", address: '42-01 28th Ave', code: 'Astoria, NY 11103'},
+    {img: './images/tavern_co.jpg', name: "Tavern CO", address: '2260 Lee Rd', code: 'Cleveland Heights, OH 44118'},
+    {img: './images/steak_n_hoagie_shop.jpg', name: "Steak 'n Hoagie Shop", address: '1542 Stallings Rd ', code: 'Matthews, NC 28104'},
+    {img: './images/bamboo_asia.jpg', name: "Bamboo Asia", address: '41 Montgomery St', code: 'San Francisco, CA 94104'},
+    {img: './images/spirito-s_italian_diner.jpg', name: "Spirito's Italian Diner", address: '2508 El Camino Real Ste E', code: 'Carlsbad, CA 92008'},
+    {img: './images/the_quail_and_thistle_tea_room.jpg', name: "The Quail and Thistle Tea Room", address: '911 Capitola Avenue', code: 'Capitola, CA 95010'},
+    {img: './images/helen_s_pizza.jpg', name: "Helen's Pizza", address: '183 Newark Ave', code: 'Jersey City, NJ 07302'},
+    {img: './images/murphy_s_taproom.jpg', name: "Murphy's Taproom", address: '494 Elm St', code: 'Manchester, NH 03101'},
+    {img: './images/moksa.jpg', name: "Moksa", address: '450 Massachusetts Ave', code: 'Cambridge, MA 02139'},
+    {img: './images/city_tacos.jpg', name: "City Tacos", address: '3028 University Ave', code: 'San Diego, CA 92104'},
+    {img: './images/easy_breezy.png', name: "Easy Breezy", address: '718 Irving St', code: 'San Francisco, CA 94122'},
+    {img: './images/xamach.jpg', name: "Xamach", address: '4123 Cedar Springs Rd Ste 105', code: 'Dallas, TX 75219'},
+    {img: './images/plates_neighborhood_kitchen.jpg', name: "Plates Neighborhood Kitchen", address: '301 Glenwood Ave Ste 100', code: 'Raleigh, NC 27603'},
+    {img: './images/net_room.jpg', name: "Net Room", address: '2115 N Cincinnati Ave', code: 'Tulsa, OK 74133'},
+  ]
+    var index = 0;
+    data.forEach(element => {
+        var div = document.createElement('div')
+        div.classList.add("col", "col-xl-4", "col-lg-4", "col-md-6", "col-sm-12")
+        var res_card = document.createElement('div')
+        res_card.classList.add("res_card");
+        div.appendChild(res_card)
+
+        var left = document.createElement('div')
+        left.classList.add("res_card-left-content");
+        var right = document.createElement('div')
+        right.classList.add("res_card-right-content");
+
+        res_card.appendChild(left)
+        res_card.appendChild(right)
+
+        var img = document.createElement('img')
+        img.classList.add("res_card-image")
+        var name = document.createElement('div')
+        name.classList.add("res_card-name")
+        var address = document.createElement('div')
+        address.classList.add("res_card-address")
+        var code = document.createElement('div')
+        code.classList.add("res_card-code")
+
+        img.src = element.img;
+        left.appendChild(img);
+
+        name.textContent = element.name;
+        right.appendChild(name);
+
+        address.textContent = element.address;
+        right.appendChild(address);
+
+        code.textContent = element.code;
+        right.appendChild(code);
+        
+        document.getElementById('res_container').appendChild(div);
+    });
+</script>
